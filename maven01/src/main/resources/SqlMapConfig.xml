@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- 扫描mapper映射文件 放在了spring-dao的配置文件中，其实这个配置文件可以删除不要
+主要用来连接数据库，扫描mapper映射文件
+-->
+</configuration>

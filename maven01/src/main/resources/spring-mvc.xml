@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans    
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    
+                        http://www.springframework.org/schema/context    
+                        http://www.springframework.org/schema/context/spring-context.xsd    
+                        http://www.springframework.org/schema/mvc    
+                        http://www.springframework.org/schema/mvc/spring-mvc.xsd"> 
+  <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->  
+    <context:component-scan base-package="com.javen.controller" />
+    <!-- 注解驱动自动加载RequestMappingHandlerMapping和RequestMappingHandlerAdapter不用手动配置 --> 
+    <mvc:annotation-driven/>  
+    <!-- 这个配置是讲静态资源交给servlet，而不被拦截 --> 
+    <mvc:default-servlet-handler/>
+    <!-- 配置视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 配置逻辑视图的前缀 -->
+		<property name="prefix" value="/WEB-INF/" />
+		<!-- 配置逻辑视图的后缀 -->
+		<property name="suffix" value=".jsp" />
+	</bean>
+                        
+     </beans>
